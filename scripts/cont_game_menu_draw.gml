@@ -11,7 +11,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 draw_set_font(fnt_04b03_menu);
 draw_set_color(c_white);
-
+            
 var i, text, align_x, align_y, offset_x, offset_y, str_width, pos_x, pos_y;
 for (i = 0; i < array_height_2d(menu_options); i++)
 {

@@ -21,13 +21,13 @@ var i = 0;
 menu_options[i, 0] = "Start";
 menu_options[i, 1] = "right";
 menu_options[i, 2] = "bottom";
-menu_options[i, 3] = -100;
-menu_options[i, 4] = -140;
+menu_options[i, 3] = -40;
+menu_options[i, 4] = -80;
 
 var i = 1;
 menu_options[i, 0] = "Quit";
 menu_options[i, 1] = "right";
 menu_options[i, 2] = "bottom";
-menu_options[i, 3] = -100;
-menu_options[i, 4] = -100;
+menu_options[i, 3] = -40;
+menu_options[i, 4] = -40;
 

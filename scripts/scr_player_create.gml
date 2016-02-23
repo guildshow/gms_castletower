@@ -4,8 +4,8 @@
  */
 
 scr_entity_movement_vars();
-speed_x = 8;
-speed_y = 12;
+speed_x = 2;
+speed_y = 6;
 
 walking = false;
 jumping = false;
@@ -30,8 +30,15 @@ key_jump_pressed = false;
 key_jump_released = false;
 key_attack_pressed = false;
 
-// object sprite
-sprite_index = spr_player;
-image_speed = 0;
+// sprite animations
+idle_speed = 0;
+idle_sprite = spr_player_knight;
+
+walking_speed = 0.1;
+walking_sprite = spr_player_knight_walking;
+
+sprite_index = idle_sprite;
 image_index = 0;
+image_speed = idle_speed;
+
 

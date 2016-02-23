@@ -12,12 +12,16 @@
     </sprites>
     <sprites name="Entities">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_knight</sprite>
+      <sprite>sprites\spr_player_knight_walking</sprite>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_castle</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Objects">
@@ -39,11 +43,6 @@
         </scripts>
       </scripts>
       <scripts name="Entities">
-        <script>scripts\scr_entity_movement_vars.gml</script>
-        <script>scripts\scr_entity_movement_update.gml</script>
-        <script>scripts\scr_entity_check_wall_collisions.gml</script>
-        <script>scripts\scr_entity_update_image_xscale.gml</script>
-        <script>scripts\scr_entity_keep_in_room.gml</script>
         <scripts name="Player">
           <script>scripts\scr_player_create.gml</script>
           <script>scripts\scr_player_step.gml</script>
@@ -53,6 +52,11 @@
           <script>scripts\scr_player_is_walking.gml</script>
           <script>scripts\scr_player_end_step.gml</script>
         </scripts>
+        <script>scripts\scr_entity_movement_vars.gml</script>
+        <script>scripts\scr_entity_movement_update.gml</script>
+        <script>scripts\scr_entity_check_wall_collisions.gml</script>
+        <script>scripts\scr_entity_update_image_xscale.gml</script>
+        <script>scripts\scr_entity_keep_in_room.gml</script>
       </scripts>
     </scripts>
   </scripts>

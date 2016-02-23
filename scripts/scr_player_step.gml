@@ -32,6 +32,7 @@ scr_player_is_walking();
 scr_entity_update_image_xscale();
 
 // update the sprite
+/*
 if (crouching)
 {
     image_speed = 0;
@@ -42,4 +43,24 @@ else
     image_speed = 0;
     image_index = 0;
 }
+*/
+if (walking)
+{
+    if (sprite_index != walking_sprite)
+    {
+        sprite_index = walking_sprite;
+        image_index = 0;
+        image_speed = walking_speed;
+    }
+}
+else
+{
+    if (sprite_index != idle_sprite)
+    {
+        sprite_index = idle_sprite;
+        image_index = 0;
+        image_speed = idle_speed;
+    }
+}
+
 
