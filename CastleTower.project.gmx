@@ -11,9 +11,9 @@
       <sprite>sprites\spr_menu_arrow</sprite>
     </sprites>
     <sprites name="Entities">
-      <sprite>sprites\spr_player</sprite>
-      <sprite>sprites\spr_player_knight</sprite>
-      <sprite>sprites\spr_player_knight_walking</sprite>
+      <sprite>sprites\spr_player_walking</sprite>
+      <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_mouse</sprite>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>

@@ -32,10 +32,10 @@ key_attack_pressed = false;
 
 // sprite animations
 idle_speed = 0;
-idle_sprite = spr_player_knight;
+idle_sprite = spr_player_idle;
 
 walking_speed = 0.1;
-walking_sprite = spr_player_knight_walking;
+walking_sprite = spr_player_walking;
 
 sprite_index = idle_sprite;
 image_index = 0;
