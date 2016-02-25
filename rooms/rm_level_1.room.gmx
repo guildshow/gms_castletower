@@ -121,6 +121,7 @@
     <instance objName="obj_wall" x="464" y="272" name="inst_B9278676" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="480" y="272" name="inst_C9B3A107" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="496" y="272" name="inst_133A935E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mouse" x="480" y="336" name="inst_B2985B2E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="16" y="176" w="16" h="16" xo="0" yo="0" id="10000122" name="inst_3171EE57" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

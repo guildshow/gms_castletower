@@ -11,9 +11,10 @@
       <sprite>sprites\spr_menu_arrow</sprite>
     </sprites>
     <sprites name="Entities">
-      <sprite>sprites\spr_player_walking</sprite>
       <sprite>sprites\spr_player_idle</sprite>
-      <sprite>sprites\spr_mouse</sprite>
+      <sprite>sprites\spr_player_walking</sprite>
+      <sprite>sprites\spr_mouse_idle</sprite>
+      <sprite>sprites\spr_mouse_walking</sprite>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
@@ -52,6 +53,12 @@
           <script>scripts\scr_player_is_walking.gml</script>
           <script>scripts\scr_player_end_step.gml</script>
         </scripts>
+        <scripts name="Mouse">
+          <script>scripts\scr_mouse_create.gml</script>
+          <script>scripts\scr_mouse_step.gml</script>
+          <script>scripts\scr_mouse_is_walking.gml</script>
+          <script>scripts\scr_mouse_end_step.gml</script>
+        </scripts>
         <script>scripts\scr_entity_movement_vars.gml</script>
         <script>scripts\scr_entity_movement_update.gml</script>
         <script>scripts\scr_entity_check_wall_collisions.gml</script>
@@ -72,6 +79,7 @@
     </objects>
     <objects name="Entities">
       <object>objects\obj_player</object>
+      <object>objects\obj_mouse</object>
     </objects>
     <objects name="Misc">
       <object>objects\obj_wall</object>
