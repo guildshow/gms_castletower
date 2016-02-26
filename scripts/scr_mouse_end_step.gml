@@ -12,6 +12,19 @@ scr_entity_movement_update();
 
 
 /**
+ * Has Reached Edge of Wall
+ */
+
+scr_entity_check_wall_edges();
+
+if (entity_at_wall_edge)
+{
+    key_left = !key_left;
+    key_right = !key_right;
+}
+
+
+/**
  * Is Colliding with Walls
  */
 

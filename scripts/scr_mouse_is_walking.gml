@@ -4,7 +4,7 @@
  */
 
 if ( ! dying && ! hurting)
-{    
+{
     if (key_left)
     {
         facing = LEFT;

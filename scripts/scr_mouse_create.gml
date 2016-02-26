@@ -14,15 +14,11 @@ attacking = false;
 hurting = false;
 dying = false;
 
-jumps = 0;
-jumpsmax = 2;
-
-can_attack = true;
-attack_cooldown_time = 240;
-attack_cooldown_timer = 0;
+action_timer = 500;
+action_time = irandom_range(200, 400);
 
 // faux inputs
-key_left = true;
+key_left = false;
 key_right = false;
 key_down = false;
 key_jump_pressed = false;
