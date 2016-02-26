@@ -30,7 +30,7 @@ if ( ! dying && ! hurting && ! jumping && ! falling)
                 key_right = false;
                 break;
         }
-        
+                
         // reset action timer
         action_timer = 0;
         action_time = irandom_range(200, 400);
