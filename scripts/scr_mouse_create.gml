@@ -26,7 +26,7 @@ key_jump_released = false;
 key_attack_pressed = false;
 
 // sprite animations
-idle_speed = 0;
+idle_speed = 0.05;
 idle_sprite = spr_mouse_idle;
 
 walking_speed = 0.3;

@@ -31,7 +31,7 @@ key_jump_released = false;
 key_attack_pressed = false;
 
 // sprite animations
-idle_speed = 0;
+idle_speed = 0.075;
 idle_sprite = spr_player_idle;
 
 jumping_speed = 0;

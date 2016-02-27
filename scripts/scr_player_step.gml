@@ -32,7 +32,7 @@ scr_player_is_walking();
 scr_entity_update_image_xscale();
 
 // update the sprite and animation speed
-if (jumping)
+if (jumping || falling)
 {
     if (sprite_index != jumping_sprite)
     {
