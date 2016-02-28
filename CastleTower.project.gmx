@@ -16,6 +16,8 @@
       <sprite>sprites\spr_player_jumping</sprite>
       <sprite>sprites\spr_mouse_idle</sprite>
       <sprite>sprites\spr_mouse_walking</sprite>
+      <sprite>sprites\spr_tiny_spider_idle</sprite>
+      <sprite>sprites\spr_tiny_spider_walking</sprite>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
@@ -61,6 +63,13 @@
           <script>scripts\scr_mouse_is_walking.gml</script>
           <script>scripts\scr_mouse_end_step.gml</script>
         </scripts>
+        <scripts name="TinySpider">
+          <script>scripts\scr_tiny_spider_create.gml</script>
+          <script>scripts\scr_tiny_spider_step.gml</script>
+          <script>scripts\scr_tiny_spider_update_action.gml</script>
+          <script>scripts\scr_tiny_spider_is_walking.gml</script>
+          <script>scripts\scr_tiny_spider_end_step.gml</script>
+        </scripts>
         <script>scripts\scr_entity_movement_vars.gml</script>
         <script>scripts\scr_entity_movement_update.gml</script>
         <script>scripts\scr_entity_check_wall_collisions.gml</script>
@@ -83,6 +92,7 @@
     <objects name="Entities">
       <object>objects\obj_player</object>
       <object>objects\obj_mouse</object>
+      <object>objects\obj_tiny_spider</object>
     </objects>
     <objects name="Misc">
       <object>objects\obj_wall</object>
