@@ -40,4 +40,6 @@ image_speed = idle_speed;
 gravity_factor = 1;
 vertical_gravity = true
 horizontal_gravity = false;
+prev_grounded = false;
+
 

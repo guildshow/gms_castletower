@@ -6,7 +6,17 @@
 // is object standing on a wall
 //grounded = place_meeting(x, y + 1, obj_wall);
 //grounded = place_meeting(x, y + (gravity_factor), obj_wall);
-grounded = true; // should always be grounded
+//grounded = true; // should always be grounded
+
+prev_grounded = grounded;
+if (vertical_gravity)
+{
+    grounded = place_meeting(x, y + gravity_factor, obj_wall);
+}
+else if (horizontal_gravity)
+{
+    grounded = place_meeting(x + gravity_factor, y, obj_wall); 
+}
 
 
 /**
