@@ -22,6 +22,7 @@
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
     </sprites>
+    <sprite>sprites\spr_bug</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_castle</background>
@@ -70,6 +71,13 @@
           <script>scripts\scr_tiny_spider_is_walking.gml</script>
           <script>scripts\scr_tiny_spider_end_step.gml</script>
         </scripts>
+        <scripts name="Bug">
+          <script>scripts\scr_bug_create.gml</script>
+          <script>scripts\scr_bug_step.gml</script>
+          <script>scripts\scr_bug_update_action.gml</script>
+          <script>scripts\scr_bug_is_walking.gml</script>
+          <script>scripts\scr_bug_end_step.gml</script>
+        </scripts>
         <script>scripts\scr_entity_movement_vars.gml</script>
         <script>scripts\scr_entity_movement_update.gml</script>
         <script>scripts\scr_entity_check_wall_collisions.gml</script>
@@ -98,9 +106,11 @@
     <objects name="Misc">
       <object>objects\obj_wall</object>
     </objects>
+    <object>objects\obj_bug</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
+    <room>rooms\rm_level_2</room>
     <room>rooms\rm_level_1</room>
     <room>rooms\rm_menu</room>
   </rooms>
