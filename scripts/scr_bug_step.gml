@@ -24,41 +24,40 @@ scr_bug_is_walking();
 
 if (vertical_gravity)
 {
-    image_angle = 0;
-    
     // if on the floor
     if (gravity_factor == 1)
     {
-        image_yscale = 1;
-        
-        if (facing == RIGHT)
-        {
-            image_xscale = 1;
-        }
-        else if (facing == LEFT)
-        {
-            image_xscale = -1;
-        }
+        image_angle = 0;
     }
     // else, if on the ceiling
     else if (gravity_factor == -1)
     {
-        image_yscale = -1;
-        
-        if (facing == RIGHT)
-        {
-            image_xscale = -1;
-        }
-        else if (facing == LEFT)
-        {
-            image_xscale = 1;
-        }
+        image_angle = 180;        
     }
 }
 else if (horizontal_gravity)
 {
-
+    // if on the east wall
+    if (gravity_factor == 1)
+    {
+        image_angle = 90;
+    }
+    // else, if on the west wall
+    else if (gravity_factor == -1)
+    {
+        image_angle = -90;
+    }
 }
+
+if (facing == RIGHT)
+{
+    image_xscale = 1;
+}
+else if (facing == LEFT)
+{
+    image_xscale = -1;
+}
+
 
 /*
 // update the sprite and animation speed

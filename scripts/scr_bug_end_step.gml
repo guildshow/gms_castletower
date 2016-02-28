@@ -6,7 +6,6 @@
 temp_vertical_gravity = vertical_gravity;
 temp_horizontal_gravity = horizontal_gravity;
 
-
 /**
  * Update Movement Speeds
  */
@@ -118,6 +117,7 @@ if (place_meeting(x + mx, y, obj_wall))
         temp_mx += sign(mx);
     }
     
+    // switch gravity towards the wall
     if (vertical_gravity)
     {
         // if moving right
@@ -148,6 +148,7 @@ if (place_meeting(x + mx, y + my, obj_wall))
         temp_my += sign(my);
     }
     
+    // switch gravity towards the floor or ceiling
     if (horizontal_gravity)
     {
         // if moving DOWN

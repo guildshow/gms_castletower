@@ -19,7 +19,7 @@ action_time = irandom_range(200, 400);
 
 // faux inputs
 key_left = false;
-key_right = true;
+key_right = false;
 key_down = false;
 key_jump_pressed = false;
 key_jump_released = false;
