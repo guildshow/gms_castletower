@@ -25,8 +25,6 @@ if (entity_at_wall_edge)
 }
 */
 
-show_debug_message('left: ' + string(key_left) + ', right: ' + string(key_right));
-
 entity_at_wall_edge = false;
 
 if (grounded && walking)

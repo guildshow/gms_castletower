@@ -74,7 +74,6 @@
         <scripts name="Bug">
           <script>scripts\scr_bug_create.gml</script>
           <script>scripts\scr_bug_step.gml</script>
-          <script>scripts\scr_bug_update_action.gml</script>
           <script>scripts\scr_bug_is_walking.gml</script>
           <script>scripts\scr_bug_end_step.gml</script>
         </scripts>
