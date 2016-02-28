@@ -18,7 +18,7 @@ action_timer = 500;
 action_time = irandom_range(200, 400);
 
 // faux inputs
-key_left = false;
+key_left = true;//false;
 key_right = false;
 key_down = false;
 key_jump_pressed = false;
@@ -35,5 +35,18 @@ walking_sprite = spr_tiny_spider_walking;
 sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
+
+
+
+sticking_to_horizontal_surface = true;
+sticking_to_vertical_surface = false;
+
+// if horz: 1 (pull down), -1 (pull up)
+sticky_gravity_factor = 1;
+
+
+gravity_factor = -1;
+
+
 
 
