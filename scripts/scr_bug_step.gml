@@ -35,12 +35,12 @@ scr_bug_is_walking();
 if (vertical_gravity)
 {
     // if on the floor
-    if (gravity_factor == 1)
+    if (sign(gravity_factor) == 1)
     {
         image_angle = 0;
     }
     // else, if on the ceiling
-    else if (gravity_factor == -1)
+    else if (sign(gravity_factor) == -1)
     {
         image_angle = 180;        
     }
@@ -48,12 +48,12 @@ if (vertical_gravity)
 else if (horizontal_gravity)
 {
     // if on the east wall
-    if (gravity_factor == 1)
+    if (sign(gravity_factor) == 1)
     {
         image_angle = 90;
     }
     // else, if on the west wall
-    else if (gravity_factor == -1)
+    else if (sign(gravity_factor) == -1)
     {
         image_angle = -90;
     }

@@ -11,7 +11,7 @@ temp_horizontal_gravity = horizontal_gravity;
  */
 
 // apply gravity
-velocity_y += GRAV * TICK * gravity_factor;
+//velocity_y += GRAV * TICK * gravity_factor;
 
 /*
 if (vertical_gravity)
@@ -38,13 +38,14 @@ if (max_velocity_y != 0)
 }
 */
 
-velocity_x = clamp(velocity_x, -10, 10);
-velocity_y = clamp(velocity_y, -10, 10);
+//velocity_x = clamp(velocity_x, -10, 10);
+//velocity_y = clamp(velocity_y, -10, 10);
 
 // new x/y positions
 //mx = velocity_x * TICK;
 //my = velocity_y * TICK;
 
+/*
 if (vertical_gravity)
 {
     mx = velocity_x * TICK;
@@ -55,6 +56,21 @@ else if (horizontal_gravity)
     mx = velocity_y * TICK;
     my = velocity_x * TICK;  
 }
+*/
+
+if (vertical_gravity)
+{
+    velocity_y += GRAV * TICK * gravity_factor;
+}
+else if (horizontal_gravity)
+{
+    velocity_x += GRAV * TICK * gravity_factor;
+}
+mx = velocity_x * TICK;
+my = velocity_y * TICK;  
+
+velocity_x = clamp(velocity_x, -10, 10);
+velocity_y = clamp(velocity_y, -10, 10);
 
 // store velocities
 last_velocity_x = mx;
@@ -124,12 +140,12 @@ if (place_meeting(x + mx, y, obj_wall))
         // if moving right
         if (sign(mx) > 0)
         {
-            gravity_factor = 1;
+            gravity_factor = base_gravity_factor;
         }
         // else, if moving left
         else if (sign(mx) < 0)
         {
-            gravity_factor = -1;
+            gravity_factor = -base_gravity_factor;
         }
         
         temp_vertical_gravity = false;
@@ -155,12 +171,12 @@ if (place_meeting(x + mx, y + my, obj_wall))
         // if moving DOWN
         if (sign(my) > 0)
         {
-            gravity_factor = 1;
+            gravity_factor = base_gravity_factor;
         }
         // else, if moving UP
         else if (sign(my) < 0)
         {
-            gravity_factor = -1;
+            gravity_factor = -base_gravity_factor;
         }
         
         temp_vertical_gravity = true;
@@ -186,41 +202,44 @@ if (place_meeting(x + mx, y + my, obj_wall))
 //if ( ! place_meeting(x + mx + sign(last_velocity_x), y + my + sign(last_velocity_y), obj_wall))
 if ( ! grounded && prev_grounded)
 {
+    show_debug_message('not grounded');
+    show_debug_message("x : " + string(mx) + ", y: " + string(my));
+    
     if (vertical_gravity)
     {
         // if on the floor
-        if (gravity_factor == 1)
+        if (sign(gravity_factor) == 1)
         {
             // if falling off the right side
             if (sign(mx) > 0)
             {
                 // switch to the west wall
-                gravity_factor = -1;
+                gravity_factor = -base_gravity_factor;
             }
             // else, if falling off the left side
             else if (sign(mx) < 0)
             {
                 // switch to the east wall
-                gravity_factor = 1;
+                //gravity_factor = base_gravity_factor;
             }
             temp_vertical_gravity = false;
             temp_horizontal_gravity = true;
         }
         
         // else, if on the ceiling
-        else if (gravity_factor == -1)
+        else if (sign(gravity_factor) == -1)
         {
             // if falling of the right side
             if (sign(mx) < 0)
             {
                 // switch to the east wall
-                gravity_factor = 1;
+                gravity_factor = base_gravity_factor;
             }
             // else, if falling of the left side
             if (sign(mx) > 0)
             {
                 // switch to the west wall
-                gravity_factor = -1;
+                //gravity_factor = -base_gravity_factor;
             }
             temp_vertical_gravity = false;
             temp_horizontal_gravity = true;
@@ -230,38 +249,38 @@ if ( ! grounded && prev_grounded)
     else if (horizontal_gravity)
     {
         // if on the west wall
-        if (gravity_factor == -1)
+        if (sign(gravity_factor) == -1)
         {
             // if falling off the right side
             if (sign(my) > 0)
             {
                 // switch to the ceiling
-                gravity_factor = -1;
+                //gravity_factor = -base_gravity_factor;
             }
             // if falling off the left side
             else if (sign(my) < 0)
             {
                 // switch to the floor
-                gravity_factor = 1;
+                gravity_factor = base_gravity_factor;
             }
             temp_vertical_gravity = true;
             temp_horizontal_gravity = false;
         }
         
         // else, if on the east wall
-        else if (gravity_factor == 1)
+        else if (sign(gravity_factor) == 1)
         {
             // if falling off the right side
             if (sign(my) < 0)
             {
                 // switch to the floor
-                gravity_factor = 1;
+                //gravity_factor = base_gravity_factor;
             }
             // else, if falling off the left side
             if (sign(my) > 0)
             {
                 // switch to the ceiling
-                gravity_factor = -1;
+                gravity_factor = -base_gravity_factor;
             }
             temp_vertical_gravity = true;
             temp_horizontal_gravity = false;
@@ -282,5 +301,4 @@ y += my;
 
 vertical_gravity = temp_vertical_gravity;
 horizontal_gravity = temp_horizontal_gravity;
-
 
