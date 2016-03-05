@@ -128,7 +128,7 @@
     <instance objName="obj_wall" x="240" y="96" name="inst_686989A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="240" y="112" name="inst_D78ECEBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bug" x="144" y="70" name="inst_88A69E45" locked="0" code="key_left = false;&#xA;key_right = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_bug" x="224" y="160" name="inst_28C4DDD1" locked="0" code="key_left = false;&#xA;key_right = true;&#xA;&#xA;horizontal_gravity = false;&#xA;vertical_gravity = true;&#xA;&#xA;horizontal_gravity_factor = 0;&#xA;vertical_gravity_factor = -gravity_factor;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bug" x="224" y="160" name="inst_28C4DDD1" locked="0" code="key_left = true;&#xA;key_right = false;&#xA;&#xA;horizontal_gravity = 0;&#xA;vertical_gravity = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ledge" x="256" y="96" name="inst_E18DC644" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ledge" x="96" y="96" name="inst_DCAD89FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ledge" x="80" y="96" name="inst_5AA5FA58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

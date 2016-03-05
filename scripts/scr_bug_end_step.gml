@@ -6,15 +6,16 @@
 temp_vertical_gravity = vertical_gravity;
 temp_horizontal_gravity = horizontal_gravity;
 
+
 /**
  * Update Movement Speeds
  */
 
 // apply gravity
-velocity_x += GRAV * TICK * horizontal_gravity_factor;
-velocity_y += GRAV * TICK * vertical_gravity_factor;
+velocity_x += GRAV * TICK * (gravity_factor * horizontal_gravity);
+velocity_y += GRAV * TICK * (gravity_factor * vertical_gravity);
 
-// update step velocities
+// update velocity steps
 mx = velocity_x * TICK;
 my = velocity_y * TICK;  
 
@@ -84,23 +85,13 @@ if (place_meeting(x + mx, y, obj_wall))
         temp_mx += sign(mx);
     }
     
-    // switch gravity towards the wall
-    if (vertical_gravity)
+    if (vertical_gravity != 0)
     {
-        // if moving right
-        if (sign(mx) > 0)
-        {
-            horizontal_gravity_factor = base_gravity_factor;
-        }
-        // else, if moving left
-        else if (sign(mx) < 0)
-        {
-            horizontal_gravity_factor = -base_gravity_factor;
-        }
-        vertical_gravity_factor = 0;
+        // if on a floor or ceiling and hitting an eastern wall (mx > 0), switch to eastern wall (horz grav = 1)
+        // if on a floor or ceiling and hitting a western wall (mx < 0), switch to western wall (horz grav = -1)
         
-        temp_horizontal_gravity = true;
-        temp_vertical_gravity = false;
+        temp_horizontal_gravity = sign(mx);
+        temp_vertical_gravity = 0;
     }
     
     mx = temp_mx;
@@ -116,23 +107,13 @@ if (place_meeting(x + mx, y + my, obj_wall))
         temp_my += sign(my);
     }
     
-    // switch gravity towards the floor or ceiling
-    if (horizontal_gravity)
+    if (horizontal_gravity != 0)
     {
-        // if moving DOWN
-        if (sign(my) > 0)
-        {
-            vertical_gravity_factor = base_gravity_factor;
-        }
-        // else, if moving UP
-        else if (sign(my) < 0)
-        {
-            vertical_gravity_factor = -base_gravity_factor;
-        }
-        horizontal_gravity_factor = 0;
+        // if on a western or eastern wall and hitting a ceiling (my < 0), switch to ceiling (vert grav = -1)
+        // if on a western or eastern wall and hitting a floor (my > 0), switch to floor (vert grav = 1);
         
-        temp_horizontal_gravity = false;
-        temp_vertical_gravity = true;
+        temp_horizontal_gravity = 0;
+        temp_vertical_gravity = sign(my);
     }
     
     my = temp_my;
@@ -141,111 +122,42 @@ if (place_meeting(x + mx, y + my, obj_wall))
 
 
 /**
- * If Entity Will have Walked off Ledge
+ * If Entity has Walked off a Ledge
+ *
+ * depending on the direction of gravity and the edge fallen off,
+ * switch gravity to force the entity to "fall" back towards the wall
  */
 
-//if ( ! place_meeting(x + last_velocity_x, y + last_velocity_y, obj_wall))
-//if ( ! place_meeting(x + mx + sign(last_velocity_x), y + my + sign(last_velocity_y), obj_wall))
-if ( ! grounded && prev_grounded)
+if (previously_grounded && ! grounded)
 {
-    show_debug_message("horz: " + string(horizontal_gravity) + ", " + string(sign(horizontal_gravity_factor)) );
-    show_debug_message("vert: " + string(vertical_gravity) + ", " + string(sign(vertical_gravity_factor)) );
-    show_debug_message("----");
+    if (horizontal_gravity != 0)
+    {
+        // if on a western wall and falling off the right side (my > 0), switch to a ceiling (vert grav = -1)
+        // if on a western wall and falling off the left side (my < 0), switch to a floor (vert grav = 1)
 
-    if (vertical_gravity)
-    {
-        // if on the floor
-        if (sign(vertical_gravity_factor) == 1)
-        {
-            // if falling off the right side
-            if (sign(mx) > 0)
-            {
-                // switch to the west wall
-                horizontal_gravity_factor = -base_gravity_factor;
-            }
-            // else, if falling off the left side
-            else if (sign(mx) < 0)
-            {
-                // switch to the east wall
-                horizontal_gravity_factor = base_gravity_factor;
-            }
-            vertical_gravity_factor = 0;
-            
-            temp_horizontal_gravity = true;
-            temp_vertical_gravity = false;
-        }
+        // if on an eastern wall and falling off the right side (my < 0), switch to a floor (vert grav = 1)
+        // if on an eastern wall and falling off the left side (my > 0), switch to a ceiling (vert grav = -1)
         
-        // else, if on the ceiling
-        else if (sign(vertical_gravity_factor) == -1)
-        {
-            // if falling of the right side
-            if (sign(mx) < 0)
-            {
-                // switch to the east wall
-                horizontal_gravity_factor = base_gravity_factor;
-            }
-            // else, if falling of the left side
-            if (sign(mx) > 0)
-            {
-                // switch to the west wall
-                horizontal_gravity_factor = -base_gravity_factor;
-            }
-            vertical_gravity_factor = 0; 
-            
-            temp_horizontal_gravity = true;
-            temp_vertical_gravity = false;
-        }
+        temp_vertical_gravity = sign(my) * -1;
+        temp_horizontal_gravity = 0;
     }
     
-    else if (horizontal_gravity)
+    else if (vertical_gravity != 0)
     {
-        // if on the west wall
-        if (sign(horizontal_gravity_factor) == -1)
-        {
-            
-            // if falling off the right side
-            if (sign(my) > 0)
-            {
-                // switch to the ceiling
-                vertical_gravity_factor = -base_gravity_factor;
-            }
-            // if falling off the left side
-            else if (sign(my) < 0)
-            {
-                // switch to the floor
-                vertical_gravity_factor = base_gravity_factor;
-            }
-            horizontal_gravity_factor = 0;
-            
-            temp_horizontal_gravity = false;
-            temp_vertical_gravity = true;
-        }
+        // if on a floor and falling off the right side (mx > 0), switch to a western wall (horz grav = -1)
+        // if on a floor and falling off the left side (mx < 0), switch to an eastern wall (horz grav = 1)
         
-        // else, if on the east wall
-        else if (sign(horizontal_gravity_factor) == 1)
-        {
-            // if falling off the right side
-            if (sign(my) < 0)
-            {
-                // switch to the floor
-                vertical_gravity_factor = base_gravity_factor;
-            }
-            // else, if falling off the left side
-            if (sign(my) > 0)
-            {
-                // switch to the ceiling
-                vertical_gravity_factor = -base_gravity_factor;
-            }
-            horizontal_gravity_factor = 0;
-            
-            temp_horizontal_gravity = false;
-            temp_vertical_gravity = true;
-        }
+        // if on a ceiling and falling off the right side (mx < 0), switch to an eastern wall (horz grav = 1)
+        // if on a ceiling and falling off the left side (mx > 0), switch to a western wall (horz grav = -1)
+        
+        temp_vertical_gravity = 0;
+        temp_horizontal_gravity = sign(mx) * -1;
     }
-    
-    //mx = last_velocity_x;
-    //my = last_velocity_y;
 }
+
+// update gravity
+horizontal_gravity = temp_horizontal_gravity;
+vertical_gravity = temp_vertical_gravity;
 
 
 /**
@@ -254,7 +166,4 @@ if ( ! grounded && prev_grounded)
 
 x += mx;
 y += my;
-
-vertical_gravity = temp_vertical_gravity;
-horizontal_gravity = temp_horizontal_gravity;
 

@@ -36,15 +36,10 @@ sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
 
-
-prev_grounded = false;
-
-base_gravity_factor = 2;
-gravity_factor = base_gravity_factor;
-
-horizontal_gravity = false;
-vertical_gravity = true
-
-horizontal_gravity_factor = 0;
-vertical_gravity_factor = gravity_factor;
+// alternate gravity options
+image_angle = 0;
+gravity_factor = 2;
+horizontal_gravity = 0;
+vertical_gravity = 1;
+previously_grounded = false;
 

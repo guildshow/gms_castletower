@@ -4,14 +4,14 @@
  */
 
 // is object standing on a wall
-prev_grounded = grounded;
-if (vertical_gravity)
+previously_grounded = grounded;
+if (vertical_gravity != 0)
 {
-    grounded = place_meeting(x, y + vertical_gravity_factor, obj_wall);
+    grounded = place_meeting(x, y + sign(vertical_gravity), obj_wall);
 }
-else if (horizontal_gravity)
+else if (horizontal_gravity != 0)
 {
-    grounded = place_meeting(x + horizontal_gravity_factor, y, obj_wall); 
+    grounded = place_meeting(x + sign(horizontal_gravity), y, obj_wall); 
 }
 
 
@@ -24,44 +24,31 @@ scr_bug_is_walking();
 
 /**
  * Update Object Sprite
+ *
+ * rotate sprite based on the force of gravity
  */
 
-// rotate sprite based on the force of gravity
-if (vertical_gravity)
+// if on the floor
+if (vertical_gravity == 1)
 {
-    // if on the floor
-    if (sign(vertical_gravity_factor) == 1)
-    {
-        image_angle = 0;
-    }
-    // else, if on the ceiling
-    else if (sign(vertical_gravity_factor) == -1)
-    {
-        image_angle = 180;        
-    }
+    image_angle = 0;
 }
-else if (horizontal_gravity)
+// else, if on the ceiling
+else if (vertical_gravity == -1)
 {
-    // if on the east wall
-    if (sign(horizontal_gravity_factor) == 1)
-    {
-        image_angle = 90;
-    }
-    // else, if on the west wall
-    else if (sign(horizontal_gravity_factor) == -1)
-    {
-        image_angle = -90;
-    }
+    image_angle = 180;        
+}
+// else, if on the eastern wall
+else if (horizontal_gravity == 1)
+{
+    image_angle = 90;
+}
+// else, if on the western wall
+else if (horizontal_gravity == -1)
+{
+    image_angle = -90;
 }
 
-/*if (facing == RIGHT)
-{
-    image_xscale = 1;
-}
-else if (facing == LEFT)
-{
-    image_xscale = -1;
-}*/
 scr_entity_update_image_xscale();
 
 

@@ -1,127 +1,43 @@
 /**
  * Bug: Is Moving
  *
- * LEFT: -1, RIGHT: 1
  */
 
-/*
 if ( ! dying && ! hurting)
 {
-    if (key_left)
+    // reset parameters
+    walking = false;
+    temp_velocity = 0;
+    
+    if (key_left || key_right)
     {
-        facing = LEFT;
-        walking = true;
-        velocity_x = speed_x * facing;
+        if (key_left)
+        {
+            facing = LEFT; // -1
+        }
+        else if (key_right)
+        {
+            facing = RIGHT; // 1
+        }
         
-        if (horizontal_gravity)
-        {
-            // falling to the EAST
-            if (gravity_factor == 1)
-            {
-                velocity_x = speed_x * 1;
-            }
-        }
-        else if (vertical_gravity)
-        {
-            // falling UP
-            if (gravity_factor == -1)
-            {
-                velocity_x = speed_x * 1;
-            }
-        }
-    }
-    else if (key_right)
-    {
-        facing = RIGHT;
         walking = true;
-        velocity_x = speed_x * facing;
+        temp_velocity = speed_x * facing;
         
-        if (horizontal_gravity)
+        // if walking along a ceiling or eastern wall
+        if (vertical_gravity == -1 || horizontal_gravity == 1)
         {
-            // falling to the EAST
-            if (gravity_factor == 1)
-            {
-                velocity_x = speed_x * -1;
-            }
+            // move in the opposite direction
+            temp_velocity = speed_x * facing * -1;
         }
-        else if (vertical_gravity)
-        {
-            // fallig UP
-            if (gravity_factor == -1)
-            {
-                velocity_x = speed_x * -1;
-            }
-        }
-    }
-    else
-    {
-        walking = false;
-        velocity_x = 0;
-    }
-}
-*/
-
-if ( ! dying && ! hurting)
-{
-    if (key_left)
-    {
-        facing = LEFT;
-        walking = true;
-        directional_velocity = speed_x * facing;
-                
-        if (horizontal_gravity)
-        {
-            // falling to the EAST
-            if (sign(horizontal_gravity_factor) == 1)
-            {
-                directional_velocity = speed_x * 1;
-            }
-        }
-        else if (vertical_gravity)
-        {
-            // falling UP
-            if (sign(vertical_gravity_factor) == -1)
-            {
-                directional_velocity = speed_x * 1;
-            }
-        }
-    }
-    else if (key_right)
-    {
-        facing = RIGHT;
-        walking = true;
-        directional_velocity = speed_x * facing;
-        
-        if (horizontal_gravity)
-        {
-            // falling to the EAST
-            if (sign(horizontal_gravity_factor) == 1)
-            {
-                directional_velocity = speed_x * -1;
-            }
-        }
-        else if (vertical_gravity)
-        {
-            // falling UP
-            if (sign(vertical_gravity_factor) == -1)
-            {
-                directional_velocity = speed_x * -1;
-            }
-        }
-    }
-    else
-    {
-        walking = false;
-        directional_velocity = 0;
     }
     
-    if (vertical_gravity)
+    if (vertical_gravity != 0)
     {
-        velocity_x = directional_velocity;
+        velocity_x = temp_velocity;
     }
-    else if (horizontal_gravity)
+    else if (horizontal_gravity != 0)
     {
-        velocity_y = directional_velocity;
+        velocity_y = temp_velocity;
     }
 }
 
