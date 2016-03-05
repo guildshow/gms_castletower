@@ -21,6 +21,8 @@
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_ledge</sprite>
+      <sprite>sprites\spr_ledge2</sprite>
     </sprites>
     <sprite>sprites\spr_bug</sprite>
   </sprites>
@@ -104,6 +106,8 @@
     </objects>
     <objects name="Misc">
       <object>objects\obj_wall</object>
+      <object>objects\obj_ledge</object>
+      <object>objects\obj_ledge2</object>
     </objects>
     <object>objects\obj_bug</object>
   </objects>

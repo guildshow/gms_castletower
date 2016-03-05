@@ -4,19 +4,13 @@
  */
 
 // is object standing on a wall
-//grounded = place_meeting(x, y + 1, obj_wall);
-//grounded = place_meeting(x, y + (gravity_factor), obj_wall);
-//grounded = true; // should always be grounded
-
 prev_grounded = grounded;
 if (vertical_gravity)
 {
-    //grounded = place_meeting(x, y + gravity_factor, obj_wall);
     grounded = place_meeting(x, y + vertical_gravity_factor, obj_wall);
 }
 else if (horizontal_gravity)
 {
-    //grounded = place_meeting(x + gravity_factor, y, obj_wall); 
     grounded = place_meeting(x + horizontal_gravity_factor, y, obj_wall); 
 }
 
@@ -32,8 +26,7 @@ scr_bug_is_walking();
  * Update Object Sprite
  */
 
-//scr_entity_update_image_xscale();
-
+// rotate sprite based on the force of gravity
 if (vertical_gravity)
 {
     // if on the floor
@@ -61,14 +54,15 @@ else if (horizontal_gravity)
     }
 }
 
-if (facing == RIGHT)
+/*if (facing == RIGHT)
 {
     image_xscale = 1;
 }
 else if (facing == LEFT)
 {
     image_xscale = -1;
-}
+}*/
+scr_entity_update_image_xscale();
 
 
 /*
