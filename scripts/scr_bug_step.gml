@@ -11,11 +11,13 @@
 prev_grounded = grounded;
 if (vertical_gravity)
 {
-    grounded = place_meeting(x, y + gravity_factor, obj_wall);
+    //grounded = place_meeting(x, y + gravity_factor, obj_wall);
+    grounded = place_meeting(x, y + vertical_gravity_factor, obj_wall);
 }
 else if (horizontal_gravity)
 {
-    grounded = place_meeting(x + gravity_factor, y, obj_wall); 
+    //grounded = place_meeting(x + gravity_factor, y, obj_wall); 
+    grounded = place_meeting(x + horizontal_gravity_factor, y, obj_wall); 
 }
 
 
@@ -35,12 +37,12 @@ scr_bug_is_walking();
 if (vertical_gravity)
 {
     // if on the floor
-    if (sign(gravity_factor) == 1)
+    if (sign(vertical_gravity_factor) == 1)
     {
         image_angle = 0;
     }
     // else, if on the ceiling
-    else if (sign(gravity_factor) == -1)
+    else if (sign(vertical_gravity_factor) == -1)
     {
         image_angle = 180;        
     }
@@ -48,12 +50,12 @@ if (vertical_gravity)
 else if (horizontal_gravity)
 {
     // if on the east wall
-    if (sign(gravity_factor) == 1)
+    if (sign(horizontal_gravity_factor) == 1)
     {
         image_angle = 90;
     }
     // else, if on the west wall
-    else if (sign(gravity_factor) == -1)
+    else if (sign(horizontal_gravity_factor) == -1)
     {
         image_angle = -90;
     }

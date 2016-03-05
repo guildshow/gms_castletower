@@ -37,12 +37,14 @@ image_index = 0;
 image_speed = idle_speed;
 
 
-base_gravity_factor = 2;
-gravity_factor = base_gravity_factor;
-vertical_gravity = true
-horizontal_gravity = false;
 prev_grounded = false;
 
-//vertical_gravity_factor = gravity_factor;
-//horizontal_gravity_factor = gravity_factor;
+base_gravity_factor = 2;
+gravity_factor = base_gravity_factor;
+
+horizontal_gravity = false;
+vertical_gravity = true
+
+horizontal_gravity_factor = 0;
+vertical_gravity_factor = gravity_factor;
 

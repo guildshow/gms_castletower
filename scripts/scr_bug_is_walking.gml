@@ -68,11 +68,11 @@ if ( ! dying && ! hurting)
         facing = LEFT;
         walking = true;
         directional_velocity = speed_x * facing;
-        
+                
         if (horizontal_gravity)
         {
             // falling to the EAST
-            if (sign(gravity_factor) == 1)
+            if (sign(horizontal_gravity_factor) == 1)
             {
                 directional_velocity = speed_x * 1;
             }
@@ -80,7 +80,7 @@ if ( ! dying && ! hurting)
         else if (vertical_gravity)
         {
             // falling UP
-            if (sign(gravity_factor) == -1)
+            if (sign(vertical_gravity_factor) == -1)
             {
                 directional_velocity = speed_x * 1;
             }
@@ -95,7 +95,7 @@ if ( ! dying && ! hurting)
         if (horizontal_gravity)
         {
             // falling to the EAST
-            if (sign(gravity_factor) == 1)
+            if (sign(horizontal_gravity_factor) == 1)
             {
                 directional_velocity = speed_x * -1;
             }
@@ -103,7 +103,7 @@ if ( ! dying && ! hurting)
         else if (vertical_gravity)
         {
             // falling UP
-            if (sign(gravity_factor) == -1)
+            if (sign(vertical_gravity_factor) == -1)
             {
                 directional_velocity = speed_x * -1;
             }
