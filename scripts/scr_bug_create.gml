@@ -3,7 +3,9 @@
  *
  */
 
-scr_entity_movement_vars();
+scr_entity_bug_movement_vars()
+
+gravity_factor = 2;
 speed_x = 1;
 speed_y = 6;
 
@@ -35,11 +37,5 @@ walking_sprite = spr_bug;
 sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
-
-// alternate gravity options
 image_angle = 0;
-gravity_factor = 2;
-horizontal_gravity = 0;
-vertical_gravity = 1;
-previously_grounded = false;
 

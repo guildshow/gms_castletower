@@ -1,9 +1,9 @@
 ///scr_entity_movement_update()
 
 /**
- * Update Entity Movement
+ * Update Object Movement
  *
- * Include in the Step Event of an object.
+ * Include in the End Step Event of an object.
  */
 
 // apply gravity

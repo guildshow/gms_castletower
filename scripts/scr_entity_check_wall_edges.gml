@@ -1,8 +1,11 @@
+///scr_entity_check_wall_edges()
+
 /**
- * Check Entities for the Edge of Platforms
+ * Check if Reached the Edge of a Wall
+ *
+ * Include in the End Step Event of an object.
  */
 
-// used by NPCs to turn around
 entity_at_wall_edge = false;
 
 if (grounded && walking)
