@@ -5,13 +5,13 @@
 
 // is object standing on a wall
 previously_grounded = grounded;
-if (vertical_gravity != 0)
+if (gravity_y != 0)
 {
-    grounded = place_meeting(x, y + sign(vertical_gravity), obj_wall);
+    grounded = place_meeting(x, y + sign(gravity_y), obj_wall);
 }
-else if (horizontal_gravity != 0)
+else if (gravity_x != 0)
 {
-    grounded = place_meeting(x + sign(horizontal_gravity), y, obj_wall); 
+    grounded = place_meeting(x + sign(gravity_x), y, obj_wall); 
 }
 
 

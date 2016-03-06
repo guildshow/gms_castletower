@@ -8,22 +8,22 @@
  */
 
 // if on the floor
-if (vertical_gravity == 1)
+if (gravity_y == 1)
 {
     image_angle = 0;
 }
 // else, if on the ceiling
-else if (vertical_gravity == -1)
+else if (gravity_y == -1)
 {
-    image_angle = 180;        
+    image_angle = 180;
 }
 // else, if on the eastern wall
-else if (horizontal_gravity == 1)
+else if (gravity_x == 1)
 {
     image_angle = 90;
 }
 // else, if on the western wall
-else if (horizontal_gravity == -1)
+else if (gravity_x == -1)
 {
     image_angle = -90;
 }

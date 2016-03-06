@@ -24,18 +24,18 @@ if ( ! dying && ! hurting)
         temp_velocity = speed_x * facing;
         
         // if walking along a ceiling or eastern wall
-        if (vertical_gravity == -1 || horizontal_gravity == 1)
+        if (gravity_y == -1 || gravity_x == 1)
         {
             // move in the opposite direction
             temp_velocity = speed_x * facing * -1;
         }
     }
     
-    if (vertical_gravity != 0)
+    if (gravity_y != 0)
     {
         velocity_x = temp_velocity;
     }
-    else if (horizontal_gravity != 0)
+    else if (gravity_x != 0)
     {
         velocity_y = temp_velocity;
     }

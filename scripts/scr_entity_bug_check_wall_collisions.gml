@@ -15,13 +15,14 @@ if (place_meeting(x + mx, y, obj_wall))
         temp_mx += sign(mx);
     }
     
-    if (vertical_gravity != 0)
+    //if (vertical_gravity != 0)
+    if (gravity_y != 0)
     {
         // if on a floor or ceiling and hitting an eastern wall (mx > 0), switch to eastern wall (horz grav = 1)
         // if on a floor or ceiling and hitting a western wall (mx < 0), switch to western wall (horz grav = -1)
         
-        temp_horizontal_gravity = sign(mx);
-        temp_vertical_gravity = 0;
+        temp_gravity_x = sign(mx);
+        temp_gravity_y = 0;
     }
     
     mx = temp_mx;
@@ -37,13 +38,14 @@ if (place_meeting(x + mx, y + my, obj_wall))
         temp_my += sign(my);
     }
     
-    if (horizontal_gravity != 0)
+    //if (horizontal_gravity != 0)
+    if (gravity_x != 0)
     {
         // if on a western or eastern wall and hitting a ceiling (my < 0), switch to ceiling (vert grav = -1)
         // if on a western or eastern wall and hitting a floor (my > 0), switch to floor (vert grav = 1);
         
-        temp_horizontal_gravity = 0;
-        temp_vertical_gravity = sign(my);
+        temp_gravity_x = 0;
+        temp_gravity_y = sign(my);
     }
     
     my = temp_my;

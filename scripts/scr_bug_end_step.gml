@@ -4,8 +4,8 @@
  */
 
 // used to update gravity at the end of this script
-temp_vertical_gravity = vertical_gravity;
-temp_horizontal_gravity = horizontal_gravity;
+temp_gravity_x = gravity_x;
+temp_gravity_y = gravity_y;
 
 
 /**
@@ -33,8 +33,8 @@ scr_entity_bug_check_wall_edges();
  * Update Gravity
  */
 
-horizontal_gravity = temp_horizontal_gravity;
-vertical_gravity = temp_vertical_gravity;
+gravity_x = temp_gravity_x;
+gravity_y = temp_gravity_y;
 
 
 /**

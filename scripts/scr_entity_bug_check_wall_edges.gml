@@ -51,19 +51,19 @@ if (grounded && walking)
 
 if (walking && previously_grounded && ! grounded)
 {
-    if (horizontal_gravity != 0)
+    if (gravity_x != 0)
     {
         // if on a western wall and falling off the right side (my > 0), switch to a ceiling (vert grav = -1)
         // if on a western wall and falling off the left side (my < 0), switch to a floor (vert grav = 1)
-
+        
         // if on an eastern wall and falling off the right side (my < 0), switch to a floor (vert grav = 1)
         // if on an eastern wall and falling off the left side (my > 0), switch to a ceiling (vert grav = -1)
         
-        temp_vertical_gravity = sign(my) * -1;
-        temp_horizontal_gravity = 0;
+        temp_gravity_x = 0;
+        temp_gravity_y = sign(my) * -1;
     }
     
-    else if (vertical_gravity != 0)
+    else if (gravity_y != 0)
     {
         // if on a floor and falling off the right side (mx > 0), switch to a western wall (horz grav = -1)
         // if on a floor and falling off the left side (mx < 0), switch to an eastern wall (horz grav = 1)
@@ -71,9 +71,8 @@ if (walking && previously_grounded && ! grounded)
         // if on a ceiling and falling off the right side (mx < 0), switch to an eastern wall (horz grav = 1)
         // if on a ceiling and falling off the left side (mx > 0), switch to a western wall (horz grav = -1)
         
-        temp_vertical_gravity = 0;
-        temp_horizontal_gravity = sign(mx) * -1;
+        temp_gravity_x = sign(mx) * -1;
+        temp_gravity_y = 0;
     }
 }
-
 

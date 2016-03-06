@@ -7,8 +7,8 @@
  */
 
 // apply gravity
-velocity_x += GRAV * TICK * (gravity_factor * horizontal_gravity);
-velocity_y += GRAV * TICK * (gravity_factor * vertical_gravity);
+velocity_x += GRAV * TICK * (gravity_factor * gravity_x);
+velocity_y += GRAV * TICK * (gravity_factor * gravity_y);
 
 // apply horizontal restrictions
 if (max_velocity_x != 0)

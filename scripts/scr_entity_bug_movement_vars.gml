@@ -8,9 +8,9 @@
 
 scr_entity_movement_vars();
 
-gravity_factor = 2;
-horizontal_gravity = 0;
-vertical_gravity = 1;
+gravity_factor = 1;
+gravity_x = 0;
+gravity_y = 1;
 
 previously_grounded = false;
 
