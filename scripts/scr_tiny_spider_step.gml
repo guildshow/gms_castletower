@@ -4,8 +4,15 @@
  */
 
 // is object standing on a wall
-//grounded = place_meeting(x, y + 1, obj_wall);
-grounded = place_meeting(x, y + (gravity_factor), obj_wall);
+previously_grounded = grounded;
+if (gravity_y != 0)
+{
+    grounded = place_meeting(x, y + sign(gravity_y), obj_wall);
+}
+else if (gravity_x != 0)
+{
+    grounded = place_meeting(x + sign(gravity_x), y, obj_wall); 
+}
 
 
 /**
@@ -20,26 +27,7 @@ scr_tiny_spider_is_walking();
  * Update Object Sprite
  */
 
-//scr_entity_update_image_xscale();
-
-if (facing == RIGHT)
-{
-    image_xscale = 1;
-}
-else if (facing == LEFT)
-{
-    image_xscale = -1;
-}
-
-// if ontop of or onbottom of
-if (gravity_factor == 1)
-{
-    image_yscale = 1;
-}
-else if (gravity_factor == -1)
-{
-    image_yscale = -1;
-}
+scr_entity_bug_update_image_xscale()
 
 // update the sprite and animation speed
 if (walking)

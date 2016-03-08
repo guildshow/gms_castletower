@@ -5,22 +5,39 @@
 
 if ( ! dying && ! hurting)
 {
-    if (key_left)
+    // reset parameters
+    walking = false;
+    temp_velocity = 0;
+    
+    if (key_left || key_right)
     {
-        facing = LEFT;
+        if (key_left)
+        {
+            facing = LEFT; // -1
+        }
+        else if (key_right)
+        {
+            facing = RIGHT; // 1
+        }
+        
         walking = true;
-        velocity_x = speed_x * facing;
+        temp_velocity = speed_x * facing;
+        
+        // if walking along a ceiling or eastern wall
+        if (gravity_y == -1 || gravity_x == 1)
+        {
+            // move in the opposite direction
+            temp_velocity = speed_x * facing * -1;
+        }
     }
-    else if (key_right)
+    
+    if (gravity_y != 0)
     {
-        facing = RIGHT;
-        walking = true;
-        velocity_x = speed_x * facing;
+        velocity_x = temp_velocity;
     }
-    else
+    else if (gravity_x != 0)
     {
-        walking = false;
-        velocity_x = 0;
+        velocity_y = temp_velocity;
     }
 }
 

@@ -24,7 +24,6 @@ scr_bug_is_walking();
 
 /**
  * Update Object Sprite
- *
  */
 
 scr_entity_bug_update_image_xscale()

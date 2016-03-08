@@ -3,38 +3,19 @@
  *
  */
 
-// used to update gravity at the end of this script
-temp_gravity_x = gravity_x;
-temp_gravity_y = gravity_y;
-
 
 /**
  * Update Movement Speeds
  */
 
-scr_entity_bug_movement_update()
-
-
-/**
- * Check if Colliding with Walls
- */
-
-scr_entity_bug_check_wall_collisions();
-
-
-/**
- * Check if Reached the Edge of a Wall
- */
-
-scr_entity_bug_check_wall_edges();
+scr_entity_bug_movement_update();
 
 
 /**
  * Update Gravity
  */
 
-gravity_x = temp_gravity_x;
-gravity_y = temp_gravity_y;
+scr_entity_bug_update_gravity();
 
 
 /**

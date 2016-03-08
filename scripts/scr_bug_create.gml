@@ -5,7 +5,7 @@
 
 scr_entity_bug_movement_vars()
 
-gravity_factor = 2;
+gravity_factor = 1;
 speed_x = 1;
 speed_y = 6;
 
@@ -29,10 +29,10 @@ key_attack_pressed = false;
 
 // sprite animations
 idle_speed = 0;
-idle_sprite = spr_bug;
+idle_sprite = spr_bug2;
 
 walking_speed = 0;
-walking_sprite = spr_bug;
+walking_sprite = spr_bug2;
 
 sprite_index = idle_sprite;
 image_index = 0;
