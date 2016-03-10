@@ -68,6 +68,7 @@
           <script>scripts\scr_player_is_jumping.gml</script>
           <script>scripts\scr_player_is_attacking.gml</script>
           <script>scripts\scr_player_is_walking.gml</script>
+          <script>scripts\scr_player_is_hurting.gml</script>
           <script>scripts\scr_player_end_step.gml</script>
         </scripts>
         <scripts name="Mouse">
@@ -75,6 +76,7 @@
           <script>scripts\scr_mouse_step.gml</script>
           <script>scripts\scr_mouse_update_action.gml</script>
           <script>scripts\scr_mouse_is_walking.gml</script>
+          <script>scripts\scr_mouse_is_attacking.gml</script>
           <script>scripts\scr_mouse_end_step.gml</script>
         </scripts>
         <scripts name="TinySpider">
@@ -82,6 +84,7 @@
           <script>scripts\scr_tiny_spider_step.gml</script>
           <script>scripts\scr_tiny_spider_update_action.gml</script>
           <script>scripts\scr_tiny_spider_is_walking.gml</script>
+          <script>scripts\scr_tiny_spider_is_attacking.gml</script>
           <script>scripts\scr_tiny_spider_end_step.gml</script>
         </scripts>
       </scripts>

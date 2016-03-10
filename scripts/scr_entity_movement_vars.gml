@@ -26,3 +26,6 @@ move_friction_min = 0; // 1   - if less than 1
 jump_bounce = 0;       // 0.5 - reduce by 50% every bounce
 jump_bounce_min = 0;   // 1   - if less than 1
 
+is_colliding_with = noone; // used for collision detection
+damage = 1;
+

@@ -16,6 +16,8 @@ attacking = false;
 hurting = false;
 dying = false;
 
+damage = 1;
+
 action_timer = 500;
 action_time = irandom_range(200, 400);
 

@@ -19,6 +19,7 @@ grounded = place_meeting(x, y + 1, obj_wall);
  * Check Object State
  */
 
+scr_player_is_hurting();
 scr_player_is_crouching();
 scr_player_is_jumping();
 scr_player_is_attacking();
@@ -32,7 +33,16 @@ scr_player_is_walking();
 scr_entity_update_image_xscale();
 
 // update the sprite and animation speed
-if (jumping || falling)
+if (hurting)
+{
+    if (sprite_index != hurting_sprite)
+    {
+        sprite_index = hurting_sprite;
+        image_index = 0;
+        image_speed = hurting_speed;
+    }
+}
+else if (jumping || falling)
 {
     if (sprite_index != jumping_sprite)
     {

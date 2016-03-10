@@ -21,6 +21,7 @@ else if (gravity_x != 0)
 
 //scr_tiny_spider_update_action();
 scr_tiny_spider_is_walking();
+scr_tiny_spider_is_attacking();
 
 
 /**

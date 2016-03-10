@@ -13,6 +13,7 @@ grounded = place_meeting(x, y + 1, obj_wall);
 
 scr_mouse_update_action();
 scr_mouse_is_walking();
+scr_mouse_is_attacking();
 
 
 /**
