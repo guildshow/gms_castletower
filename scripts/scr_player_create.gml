@@ -35,6 +35,7 @@ key_jump_released = false;
 key_attack_pressed = false;
 
 // sprite animations
+/*
 idle_speed = 0.025;
 idle_sprite = spr_player_idle;
 
@@ -46,9 +47,13 @@ walking_sprite = spr_player_walking;
 
 hurting_speed = 0;
 hurting_sprite = spr_player_jumping;
+*/
+idle_speed = 0;
+idle_sprite = spr_player_box;
 
 sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
+//mask_index = spr_player_standing_mask;
 
 

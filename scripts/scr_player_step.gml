@@ -32,6 +32,7 @@ scr_player_is_walking();
 
 scr_entity_update_image_xscale();
 
+/*
 // update the sprite and animation speed
 if (hurting)
 {
@@ -69,5 +70,5 @@ else
         image_speed = idle_speed;
     }
 }
-
+*/
 

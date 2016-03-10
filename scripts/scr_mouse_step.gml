@@ -22,6 +22,7 @@ scr_mouse_is_attacking();
 
 scr_entity_update_image_xscale();
 
+/*
 // update the sprite and animation speed
 if (walking)
 {
@@ -41,5 +42,5 @@ else
         image_speed = idle_speed;
     }
 }
-
+*/
 

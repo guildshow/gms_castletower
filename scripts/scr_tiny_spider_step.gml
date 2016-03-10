@@ -30,6 +30,7 @@ scr_tiny_spider_is_attacking();
 
 scr_entity_bug_update_image_xscale()
 
+/*
 // update the sprite and animation speed
 if (walking)
 {
@@ -49,5 +50,5 @@ else
         image_speed = idle_speed;
     }
 }
-
+*/
 

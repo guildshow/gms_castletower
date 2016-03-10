@@ -30,11 +30,15 @@ key_jump_released = false;
 key_attack_pressed = false;
 
 // sprite animations
+/*
 idle_speed = 0.05;
 idle_sprite = spr_tiny_spider_idle;
 
 walking_speed = 0.3;
 walking_sprite = spr_tiny_spider_walking;
+*/
+idle_speed = 0;
+idle_sprite = spr_mouse_box;
 
 sprite_index = idle_sprite;
 image_index = 0;
