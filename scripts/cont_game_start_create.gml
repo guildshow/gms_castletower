@@ -18,10 +18,22 @@ globalvar RIGHT, LEFT, TICK, GRAV, TILE_SIZE;
 RIGHT = 1;
 LEFT = -1;
 TICK = 1;
-GRAV = 0.3;//0.5;
+GRAV = 0.3;
 TILE_SIZE = 16;
 
-//window_set_size(400, 240);
-window_set_size(800, 480);
-//window_set_size(1200, 720);
+/*
+    VIEW_WIDTH  - the width of each Room's View/Port
+    VIEW_HEIGHT - the height of each Room's View/Port
+*/
+
+globalvar VIEW_WIDTH, VIEW_HEIGHT;
+
+VIEW_WIDTH = 400;
+VIEW_HEIGHT = 240;
+
+// resize game window at start
+// *or set the Width/Height of the first room (under the Settings tab)
+var width = 500;
+var height = 500;
+window_set_size(width, height);
 
