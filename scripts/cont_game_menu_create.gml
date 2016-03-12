@@ -5,7 +5,7 @@
 
 // logo options
 logo_x = room_width / 2;
-logo_y = 100;
+logo_y = 20;
 
 // menu options
 /*
@@ -21,13 +21,13 @@ var i = 0;
 menu_options[i, 0] = "Start";
 menu_options[i, 1] = "right";
 menu_options[i, 2] = "bottom";
-menu_options[i, 3] = -40;
-menu_options[i, 4] = -80;
+menu_options[i, 3] = -30;
+menu_options[i, 4] = -60;
 
 var i = 1;
 menu_options[i, 0] = "Quit";
 menu_options[i, 1] = "right";
 menu_options[i, 2] = "bottom";
-menu_options[i, 3] = -40;
-menu_options[i, 4] = -40;
+menu_options[i, 3] = -30;
+menu_options[i, 4] = -30;
 

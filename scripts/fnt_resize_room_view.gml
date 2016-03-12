@@ -35,3 +35,6 @@ view_hview[0] = height;
 // resize application surface
 surface_resize(application_surface, width, height);
 
+// update background color
+background_color = BG_COLOR;
+
