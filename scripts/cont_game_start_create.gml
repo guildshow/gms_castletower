@@ -38,4 +38,5 @@ BG_COLOR = make_color_rgb(25, 25, 25); //c_black;
 var width = 500;
 var height = 500;
 window_set_size(width, height);
+//window_center();
 
