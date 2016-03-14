@@ -35,8 +35,18 @@ BG_COLOR = make_color_rgb(25, 25, 25); //c_black;
 
 // resize game window at start
 // *or set the Width/Height of the first room (under the Settings tab)
-var width = 500;
-var height = 500;
-window_set_size(width, height);
+//var width = 500;
+//var height = 500;
+//window_set_size(width, height);
 //window_center();
+
+/*
+    WINDOW_FOCUS      - whether the game window has focus
+    GAME_JUST_STARTED - whether the game just started
+*/
+globalvar WINDOW_FOCUS, GAME_JUST_STARTED;
+
+WINDOW_FOCUS = false;
+GAME_JUST_STARTED = true;
+instance_create(0, 0, cont_game_focus);
 
