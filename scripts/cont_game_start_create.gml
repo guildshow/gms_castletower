@@ -24,6 +24,14 @@ GRAV = 0.3;
 TILE_SIZE = 16;
 GAME_HAS_FOCUS = false;
 
+
+globalvar CURRENT_DOOR_CODE, CURRENT_ROOM_NAME, PREVIOUS_DOOR_CODE, PREVIOUS_ROOM_NAME;
+
+CURRENT_DOOR_CODE = '';
+CURRENT_ROOM_NAME = '';
+PREVIOUS_DOOR_CODE = '';
+PREVIOUS_ROOM_NAME = '';
+
 /*
     VIEW_WIDTH  - the width of each Room's View/Port
     VIEW_HEIGHT - the height of each Room's View/Port

@@ -25,6 +25,7 @@
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_door</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -98,6 +99,13 @@
           <script>scripts\scr_tiny_spider_end_step.gml</script>
         </scripts>
       </scripts>
+      <scripts name="Misc">
+        <scripts name="Door">
+          <script>scripts\scr_door_create.gml</script>
+          <script>scripts\scr_door_step.gml</script>
+          <script>scripts\scr_door_draw.gml</script>
+        </scripts>
+      </scripts>
     </scripts>
     <scripts name="Helpers">
       <script>scripts\fnt_smooth_rotation.gml</script>
@@ -107,6 +115,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_04b03_gui</font>
     <font>fonts\fnt_04b03_menu</font>
+    <font>fonts\fnt_04b03_game</font>
   </fonts>
   <objects name="objects">
     <objects name="Controllers">
@@ -122,10 +131,13 @@
     </objects>
     <objects name="Misc">
       <object>objects\obj_wall</object>
+      <object>objects\obj_door</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
+    <room>rooms\rm_level_2</room>
+    <room>rooms\rm_level_3</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_level_1</room>
   </rooms>
