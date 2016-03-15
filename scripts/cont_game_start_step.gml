@@ -18,9 +18,11 @@ if ( ! GAME_HAS_FOCUS)
 }
 TICK = min(2, dt);
 
-// if ESC or P key is pressed
-if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(ord("P")))
+// if ESC key is pressed
+if (keyboard_check_pressed(vk_escape))
 {
+    io_clear();
+    
     // add the Pause Screen
     instance_create(0, 0, cont_pause_screen);
 }

@@ -3,9 +3,11 @@
  *
  */
 
-// if ESC or P key is pressed
-if (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(ord("P")))
+// if ESC is pressed
+if (keyboard_check_pressed(vk_escape))
 {
+    io_clear();
+    
     // destory the surface, freeing it from memory
     if (surface_exists(snapshot_surface))
     {
