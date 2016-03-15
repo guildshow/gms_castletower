@@ -1,13 +1,9 @@
 /**
  * Game Focus Controller: Initialize Variables
  *
- * Loaded at the start of the game. Also loaded anytime the window loses focus.
+ * Loaded anytime the window loses focus or the OS is paused.
  */
 
-// if the game didn't just start
-if ( ! GAME_JUST_STARTED)
-{
-    // deactivate everything but this object
-    instance_deactivate_all(true);
-}
+// deactivate everything but this object
+instance_deactivate_all(true);
 

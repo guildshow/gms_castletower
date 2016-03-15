@@ -1,6 +1,7 @@
 /**
- * Game Start Controller: Set Global Variables
+ * Game Start Controller: On Create
  *
+ * Set Global Variables
  * The "cont_game_start" is a persistent object that gets added
  * in the creation code of "rm_initialize" when the game begins.
  */
@@ -11,15 +12,17 @@
     TICK - the amount of time that has passed since the last step
     GRAV - the gravity
     TILE_SIZE - the default tile size
+    GAME_HAS_FOCUS - whether the game window has focu
 */
 
-globalvar RIGHT, LEFT, TICK, GRAV, TILE_SIZE;
+globalvar RIGHT, LEFT, TICK, GRAV, TILE_SIZE, GAME_HAS_FOCUS;
 
 RIGHT = 1;
 LEFT = -1;
 TICK = 1;
 GRAV = 0.3;
 TILE_SIZE = 16;
+GAME_HAS_FOCUS = false;
 
 /*
     VIEW_WIDTH  - the width of each Room's View/Port
@@ -39,14 +42,4 @@ BG_COLOR = make_color_rgb(25, 25, 25); //c_black;
 //var height = 500;
 //window_set_size(width, height);
 //window_center();
-
-/*
-    WINDOW_FOCUS      - whether the game window has focus
-    GAME_JUST_STARTED - whether the game just started
-*/
-globalvar WINDOW_FOCUS, GAME_JUST_STARTED;
-
-WINDOW_FOCUS = false;
-GAME_JUST_STARTED = true;
-instance_create(0, 0, cont_game_focus);
 
