@@ -32,6 +32,9 @@ view_hport[0] = height;
 view_wview[0] = width;
 view_hview[0] = height;
 
+//view_hborder[0] = width - 32;
+//view_vborder[0] = height - 32;
+
 // resize application surface
 surface_resize(application_surface, width, height);
 display_set_gui_size(width, height);

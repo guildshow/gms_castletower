@@ -3,8 +3,10 @@
  *
  */
 
+// draw the object's sprite
 draw_self();
 
+// draw text above the door
 if (show_text)
 {
     var xPos = round(x);

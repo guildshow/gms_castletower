@@ -3,7 +3,7 @@
  *
  */
 
-door_text = 'IMMA DOOR';
+door_text = 'PRESS UP'
 show_text = false;
 
 /*

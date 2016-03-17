@@ -74,6 +74,7 @@
         </scripts>
         <scripts name="Player">
           <script>scripts\scr_player_create.gml</script>
+          <script>scripts\scr_player_room_start.gml</script>
           <script>scripts\scr_player_step.gml</script>
           <script>scripts\scr_player_is_crouching.gml</script>
           <script>scripts\scr_player_is_jumping.gml</script>
@@ -110,6 +111,7 @@
     <scripts name="Helpers">
       <script>scripts\fnt_smooth_rotation.gml</script>
       <script>scripts\fnt_resize_room_view.gml</script>
+      <script>scripts\fnt_update_camera.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
