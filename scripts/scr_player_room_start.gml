@@ -9,10 +9,9 @@ with (obj_door)
     if (door_code == CURRENT_DOOR_CODE)
     {
         other.x = x;
-        other.y = y - other.sprite_height;
+        other.y = y + floor((sprite_height - other.sprite_height) / 2);
     }
 }
-
 
 
 /**

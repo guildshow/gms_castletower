@@ -118,6 +118,8 @@
     <font>fonts\fnt_04b03_gui</font>
     <font>fonts\fnt_04b03_menu</font>
     <font>fonts\fnt_04b03_game</font>
+    <font>fonts\fnt_pixel7_game</font>
+    <font>fonts\fnt_pixel7_menu</font>
   </fonts>
   <objects name="objects">
     <objects name="Controllers">

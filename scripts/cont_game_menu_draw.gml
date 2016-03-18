@@ -9,7 +9,8 @@ draw_sprite_ext(spr_game_logo, 0, logo_x, logo_y, 1, 1, 0, c_white, 1);
 // draw menu options
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
-draw_set_font(fnt_04b03_menu);
+//draw_set_font(fnt_04b03_menu);
+draw_set_font(fnt_pixel7_menu);
 draw_set_color(c_white);
             
 var i, text, align_x, align_y, offset_x, offset_y, str_width, pos_x, pos_y;
