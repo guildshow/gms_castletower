@@ -18,6 +18,16 @@ if ( ! dying && ! hurting && ! recovering)
         hurting = true;
         recovering = true;
         
+        // apply damage
+        if (is_colliding_with.damage)
+        {
+            current_health -= is_colliding_with.damage;
+            if (current_health <= 0)
+            {
+                current_health = maximum_health;
+            }
+        }
+        
         // apply horizontal knockback
         var knockback_x = 2;
         if (x < is_colliding_with.x)

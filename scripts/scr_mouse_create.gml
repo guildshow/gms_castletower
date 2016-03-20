@@ -7,6 +7,8 @@ scr_entity_movement_vars();
 speed_x = 2.5;
 speed_y = 6;
 
+damage = 1;
+
 walking = false;
 jumping = false;
 falling = false;

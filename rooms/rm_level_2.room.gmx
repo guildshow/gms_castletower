@@ -138,6 +138,8 @@
     <instance objName="obj_door" x="688" y="352" name="inst_B70C29EE" locked="0" code="door_code = '02';&#xA;exit_door_code = '02';&#xA;exit_room_name = 'rm_level_3';&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="176" y="336" name="inst_6E9ED2A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hud" x="80" y="192" name="inst_A3F20E91" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mouse" x="544" y="256" name="inst_F368E1F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_tiny_spider" x="240" y="256" name="inst_7818274D" locked="0" code="key_right = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="16" y="176" w="16" h="16" xo="0" yo="0" id="10000122" name="inst_3171EE57" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

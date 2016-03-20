@@ -72,16 +72,3 @@ else
 }
 */
 
-
-
-reduce_health_timer += TICK;
-if (reduce_health_timer >= reduce_health_time)
-{
-    current_health -= 1;
-    if (current_health < 0)
-    {
-        current_health = maximum_health;
-    }
-    reduce_health_timer = 0;
-}
-
