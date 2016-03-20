@@ -26,6 +26,7 @@
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_door</sprite>
+      <sprite>sprites\spr_player_health_marker</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -106,6 +107,11 @@
           <script>scripts\scr_door_step.gml</script>
           <script>scripts\scr_door_draw.gml</script>
         </scripts>
+        <scripts name="HUD">
+          <script>scripts\scr_hud_create.gml</script>
+          <script>scripts\scr_hud_step.gml</script>
+          <script>scripts\scr_hud_draw_gui.gml</script>
+        </scripts>
       </scripts>
     </scripts>
     <scripts name="Helpers">
@@ -136,6 +142,7 @@
     <objects name="Misc">
       <object>objects\obj_wall</object>
       <object>objects\obj_door</object>
+      <object>objects\obj_hud</object>
     </objects>
   </objects>
   <rooms name="rooms">

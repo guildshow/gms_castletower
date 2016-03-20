@@ -7,6 +7,9 @@ scr_entity_movement_vars();
 speed_x = 2;
 speed_y = 6;
 
+current_health = 10;
+maximum_health = 10;
+
 walking = false;
 jumping = false;
 falling = false;
@@ -56,4 +59,7 @@ image_index = 0;
 image_speed = idle_speed;
 //mask_index = spr_player_standing_mask;
 
+
+reduce_health_time = 120; // 2 seconds
+reduce_health_timer = 0;
 
