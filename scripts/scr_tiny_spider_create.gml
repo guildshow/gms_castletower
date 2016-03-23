@@ -9,15 +9,23 @@ gravity_factor = 1;
 speed_x = 1;
 speed_y = 6;
 
+damage = 1;
+current_health = 1;
+maximum_health = 1;
+
 walking = false;
 jumping = false;
 falling = false;
 attacking = false;
+recovering = false;
 hurting = false;
 dying = false;
 
 action_timer = 500;
 action_time = irandom_range(200, 400);
+
+recovering_cooldown_time = 60; // 1 second
+recovering_cooldown_timer = 0;
 
 // faux inputs
 key_left = false;
