@@ -3,7 +3,7 @@
  *
  */
 
-if ( ! dying && ! hurting)
+if ( ! dying && ! hurting && ! recovering)
 {
     if (place_meeting(x, y, obj_player))
     {

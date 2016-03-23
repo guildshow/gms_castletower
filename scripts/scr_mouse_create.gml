@@ -8,16 +8,22 @@ speed_x = 2.5;
 speed_y = 6;
 
 damage = 1;
+current_health = 2;
+maximum_health = 2;
 
 walking = false;
 jumping = false;
 falling = false;
 attacking = false;
 hurting = false;
+recovering = false;
 dying = false;
 
 action_timer = 500;
 action_time = irandom_range(200, 400);
+
+recovering_cooldown_time = 60; // 1 second
+recovering_cooldown_timer = 0;
 
 // faux inputs
 key_left = false;

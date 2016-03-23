@@ -23,7 +23,10 @@ jumps = 0;
 jumpsmax = 2;
 
 can_attack = true;
-attack_cooldown_time = 240; // 4 seconds
+player_attack = noone;
+attack_time = 30; // 0.5 second
+attack_timer = 0;
+attack_cooldown_time = 60; // 1 second
 attack_cooldown_timer = 0;
 
 recovering_cooldown_time = 60; // 1 second

@@ -9,8 +9,6 @@ gravity_factor = 1;
 speed_x = 1;
 speed_y = 6;
 
-damage = 1;
-
 walking = false;
 jumping = false;
 falling = false;

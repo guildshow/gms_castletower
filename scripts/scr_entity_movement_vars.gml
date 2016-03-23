@@ -28,4 +28,6 @@ jump_bounce_min = 0;   // 1   - if less than 1
 
 is_colliding_with = noone; // used for collision detection
 damage = 1;
+current_health = 1;
+maximum_health = 1;
 
