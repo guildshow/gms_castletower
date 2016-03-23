@@ -10,6 +10,7 @@ with (obj_door)
     {
         other.x = x;
         other.y = y + floor((sprite_height - other.sprite_height) / 2);
+        can_use_door = false;
     }
 }
 

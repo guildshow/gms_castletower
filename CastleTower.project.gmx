@@ -11,18 +11,22 @@
       <sprite>sprites\spr_menu_arrow</sprite>
     </sprites>
     <sprites name="Entities">
-      <sprite>sprites\spr_player_idle</sprite>
-      <sprite>sprites\spr_player_walking</sprite>
-      <sprite>sprites\spr_player_jumping</sprite>
-      <sprite>sprites\spr_player_standing_mask</sprite>
-      <sprite>sprites\spr_player_box</sprite>
-      <sprite>sprites\spr_player_attack_box</sprite>
-      <sprite>sprites\spr_mouse_idle</sprite>
-      <sprite>sprites\spr_mouse_walking</sprite>
-      <sprite>sprites\spr_mouse_box</sprite>
-      <sprite>sprites\spr_tiny_spider_idle</sprite>
-      <sprite>sprites\spr_tiny_spider_box</sprite>
-      <sprite>sprites\spr_tiny_spider_walking</sprite>
+      <sprites name="Player">
+        <sprite>sprites\spr_player_idle</sprite>
+        <sprite>sprites\spr_player_walking</sprite>
+        <sprite>sprites\spr_player_jumping</sprite>
+        <sprite>sprites\spr_player_standing_mask</sprite>
+        <sprite>sprites\spr_player_box</sprite>
+        <sprite>sprites\spr_player_attack_box</sprite>
+      </sprites>
+      <sprites name="Enemies">
+        <sprite>sprites\spr_mouse_idle</sprite>
+        <sprite>sprites\spr_mouse_walking</sprite>
+        <sprite>sprites\spr_mouse_box</sprite>
+        <sprite>sprites\spr_tiny_spider_idle</sprite>
+        <sprite>sprites\spr_tiny_spider_box</sprite>
+        <sprite>sprites\spr_tiny_spider_walking</sprite>
+      </sprites>
     </sprites>
     <sprites name="Misc">
       <sprite>sprites\spr_wall</sprite>
@@ -90,23 +94,25 @@
             <script>scripts\scr_player_attack_end_step.gml</script>
           </scripts>
         </scripts>
-        <scripts name="Mouse">
-          <script>scripts\scr_mouse_create.gml</script>
-          <script>scripts\scr_mouse_step.gml</script>
-          <script>scripts\scr_mouse_update_action.gml</script>
-          <script>scripts\scr_mouse_is_hurting.gml</script>
-          <script>scripts\scr_mouse_is_walking.gml</script>
-          <script>scripts\scr_mouse_is_attacking.gml</script>
-          <script>scripts\scr_mouse_end_step.gml</script>
-        </scripts>
-        <scripts name="TinySpider">
-          <script>scripts\scr_tiny_spider_create.gml</script>
-          <script>scripts\scr_tiny_spider_step.gml</script>
-          <script>scripts\scr_tiny_spider_update_action.gml</script>
-          <script>scripts\scr_tiny_spider_is_hurting.gml</script>
-          <script>scripts\scr_tiny_spider_is_walking.gml</script>
-          <script>scripts\scr_tiny_spider_is_attacking.gml</script>
-          <script>scripts\scr_tiny_spider_end_step.gml</script>
+        <scripts name="Enemies">
+          <scripts name="Mouse">
+            <script>scripts\scr_mouse_create.gml</script>
+            <script>scripts\scr_mouse_step.gml</script>
+            <script>scripts\scr_mouse_update_action.gml</script>
+            <script>scripts\scr_mouse_is_hurting.gml</script>
+            <script>scripts\scr_mouse_is_walking.gml</script>
+            <script>scripts\scr_mouse_is_attacking.gml</script>
+            <script>scripts\scr_mouse_end_step.gml</script>
+          </scripts>
+          <scripts name="TinySpider">
+            <script>scripts\scr_tiny_spider_create.gml</script>
+            <script>scripts\scr_tiny_spider_step.gml</script>
+            <script>scripts\scr_tiny_spider_update_action.gml</script>
+            <script>scripts\scr_tiny_spider_is_hurting.gml</script>
+            <script>scripts\scr_tiny_spider_is_walking.gml</script>
+            <script>scripts\scr_tiny_spider_is_attacking.gml</script>
+            <script>scripts\scr_tiny_spider_end_step.gml</script>
+          </scripts>
         </scripts>
       </scripts>
       <scripts name="Misc">
