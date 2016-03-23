@@ -143,10 +143,15 @@
       <object>objects\cont_game_focus</object>
     </objects>
     <objects name="Entities">
-      <object>objects\obj_player</object>
-      <object>objects\obj_mouse</object>
-      <object>objects\obj_tiny_spider</object>
-      <object>objects\obj_player_attack</object>
+      <objects name="Player">
+        <object>objects\obj_player</object>
+        <object>objects\obj_player_attack</object>
+      </objects>
+      <objects name="Enemies">
+        <object>objects\obj_enemy</object>
+        <object>objects\obj_mouse</object>
+        <object>objects\obj_tiny_spider</object>
+      </objects>
     </objects>
     <objects name="Misc">
       <object>objects\obj_wall</object>
