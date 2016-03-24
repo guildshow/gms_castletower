@@ -9,7 +9,8 @@ if (colliding_with != noone)
 {
     with (colliding_with)
     {
-        is_colliding_with = other.object_index;
+        //is_colliding_with = other.object_index;
+        is_colliding_with = other.id;
     }
 }
 

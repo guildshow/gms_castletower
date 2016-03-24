@@ -9,7 +9,8 @@ if ( ! dying && ! hurting && ! recovering)
     {
         with (obj_player)
         {
-            is_colliding_with = other.object_index;
+            //is_colliding_with = other.object_index;
+            is_colliding_with = other.id
         }
     }
 }

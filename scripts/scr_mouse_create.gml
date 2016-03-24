@@ -48,4 +48,3 @@ sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
 
-
