@@ -97,6 +97,7 @@
         <scripts name="Enemies">
           <scripts name="Mouse">
             <script>scripts\scr_mouse_create.gml</script>
+            <script>scripts\scr_mouse_room_start.gml</script>
             <script>scripts\scr_mouse_step.gml</script>
             <script>scripts\scr_mouse_update_action.gml</script>
             <script>scripts\scr_mouse_is_hurting.gml</script>
@@ -106,6 +107,7 @@
           </scripts>
           <scripts name="TinySpider">
             <script>scripts\scr_tiny_spider_create.gml</script>
+            <script>scripts\scr_tiny_spider_room_start.gml</script>
             <script>scripts\scr_tiny_spider_step.gml</script>
             <script>scripts\scr_tiny_spider_update_action.gml</script>
             <script>scripts\scr_tiny_spider_is_hurting.gml</script>
@@ -127,6 +129,8 @@
           <script>scripts\scr_hud_draw_gui.gml</script>
         </scripts>
       </scripts>
+      <script>scripts\fnt_check_room_data.gml</script>
+      <script>scripts\fnt_update_room_data.gml</script>
     </scripts>
     <scripts name="Helpers">
       <script>scripts\fnt_smooth_rotation.gml</script>
