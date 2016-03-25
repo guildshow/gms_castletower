@@ -129,8 +129,8 @@
           <script>scripts\scr_hud_draw_gui.gml</script>
         </scripts>
       </scripts>
-      <script>scripts\fnt_check_room_data.gml</script>
-      <script>scripts\fnt_update_room_data.gml</script>
+      <script>scripts\fnt_check_enemies_destroyed.gml</script>
+      <script>scripts\fnt_update_enemies_destroyed.gml</script>
     </scripts>
     <scripts name="Helpers">
       <script>scripts\fnt_smooth_rotation.gml</script>

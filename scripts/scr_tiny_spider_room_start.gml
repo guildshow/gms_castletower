@@ -4,7 +4,7 @@
  */
 
 // if this object was destroyed
-if (fnt_check_room_data(id))
+if (fnt_check_enemies_destroyed(id))
 {
     instance_destroy();
 }

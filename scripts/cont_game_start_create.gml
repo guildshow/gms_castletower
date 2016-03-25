@@ -25,10 +25,27 @@ TILE_SIZE = 16;
 GAME_HAS_FOCUS = false;
 
 
-globalvar MAP_DESTROYED_INSTANCES;
+/*
+    Track which enemies in a room have been destroyed so that when the room reloads
+    the enemies can check whether their unique id exist in the map, if so then they
+    can destroy themselves. This prevents the player from re-entering a room over and
+    over destroying the same enemies. I need to implement a way to clear the room
+    after the player has traveled a good distance away from the room.
+    
+    MAP_ENEMIES_DESTROYED - a ds_map to track which enemies have been destroyed
+*/
 
-MAP_DESTROYED_INSTANCES = ds_map_create();
+globalvar MAP_ENEMIES_DESTROYED;
 
+MAP_ENEMIES_DESTROYED = ds_map_create();
+
+
+/*
+    CURRENT_DOOR_CODE
+    CURRENT_ROOM_NAME
+    PREVIOUS_DOOR_CODE
+    PREVIOUS_ROOM_NAME
+*/
 
 globalvar CURRENT_DOOR_CODE, CURRENT_ROOM_NAME, PREVIOUS_DOOR_CODE, PREVIOUS_ROOM_NAME;
 
@@ -36,6 +53,7 @@ CURRENT_DOOR_CODE = '';
 CURRENT_ROOM_NAME = '';
 PREVIOUS_DOOR_CODE = '';
 PREVIOUS_ROOM_NAME = '';
+
 
 /*
     VIEW_WIDTH  - the width of each Room's View/Port

@@ -16,8 +16,8 @@ if ( ! dying && ! hurting && ! recovering)
             current_health -= is_colliding_with.damage;
             if (current_health <= 0)
             {
-                //ds_list_add(ROOM_MAPDATA, id);
-                fnt_update_room_data(id);
+                // update ds_map with object id
+                fnt_update_enemies_destroyed(id);
                 
                 //current_health = maximum_health;
                 instance_destroy();
