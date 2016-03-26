@@ -173,6 +173,7 @@
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_level_2</room>
     <room>rooms\rm_level_3</room>
+    <room>rooms\rm_level_4</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_level_1</room>
   </rooms>

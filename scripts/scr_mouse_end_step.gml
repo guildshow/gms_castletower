@@ -30,7 +30,8 @@ if (entity_at_wall_edge)
 
 scr_entity_check_wall_collisions();
 
-if (entity_hit_wall)
+//if (entity_hit_wall)
+if ( ! entity_at_wall_edge && entity_hit_wall)
 {
     key_left = !key_left;
     key_right = !key_right;
