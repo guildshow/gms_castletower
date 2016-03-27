@@ -49,50 +49,29 @@ for (var i = 0; i < map_size; i++;)
 }
 show_debug_message("--------------------");
 
-/*
-if (is_array(ARRAY_ENEMIES_DESTROYED))
-{
-    var array_length = array_length_1d(ARRAY_ENEMIES_DESTROYED) - 1;
-    var str = 'array: ';
-    for (var i = array_length; i > -1; i--)
-    {
-        str += ' ' + string(ARRAY_ENEMIES_DESTROYED[i]);
-    }
-    show_debug_message(str);
-}
-*/
 
-var str = 'list: ';
-var list_size = ds_map_size(LIST_ENEMIES_DESTROYED);
-for (var i = 0; i < list_size; i++)
-{
-    str += ' ' + string(ds_list_find_value(LIST_ENEMIES_DESTROYED, i));
-}
-show_debug_message(str);
+/**
+ * Clear Room Data
+ *
+ * Iterate through the enemies destroyed data to see if the player has
+ * moved far enough away that the enemies can respawn.
+ */
 
-// how large is the ds_map
-var map_size = ds_map_size(MAP_ENEMIES_DESTROYED);
-if (map_size > 0)
+if (ds_map_size(MAP_ENEMIES_DESTROYED) > 0)
 {
-    show_debug_message('size: ' + string(map_size));
-    //show_debug_message('current room: ' + string(CURRENT_ROOM_NAME));
-    //show_debug_message('previous room: ' + string(PREVIOUS_ROOM_NAME));
+    //show_debug_message('size: ' + string(map_size));
     
     if (PREVIOUS_ROOM_NAME != '')
     {
         var previous_room_id = asset_get_index(PREVIOUS_ROOM_NAME);
-        show_debug_message('current room id: ' + string(room) + ', previous room id: ' + string(previous_room_id));
-        
-        //var previous_map_value = ds_map_find_value(MAP_ENEMIES_DESTROYED, previous_room_id);
-        
-        // need to remove the list of objects that is not the previous room
+        //show_debug_message('current room id: ' + string(room) + ', previous room id: ' + string(previous_room_id));
         
         var list_size = ds_map_size(LIST_ENEMIES_DESTROYED) - 1;
         for (var i = list_size; i > -1; i--)
         {
             var list_value = ds_list_find_value(LIST_ENEMIES_DESTROYED, i);
-            show_debug_message(" - " + string(list_value));
             
+            // if this room id is not the current or previous room
             if (list_value != room && list_value != previous_room_id)
             {
                 ds_list_delete(LIST_ENEMIES_DESTROYED, i);
@@ -103,5 +82,14 @@ if (map_size > 0)
     }
 }
 
+/*
+var str = 'list: ';
+var list_size = ds_map_size(LIST_ENEMIES_DESTROYED);
+for (var i = 0; i < list_size; i++)
+{
+    str += ' ' + string(ds_list_find_value(LIST_ENEMIES_DESTROYED, i));
+}
+show_debug_message(str);
+*/
 
 
