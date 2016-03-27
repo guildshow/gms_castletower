@@ -8,7 +8,7 @@ speed_x = 2.5;
 speed_y = 6;
 
 damage = 1;
-current_health = 2;
+current_health = 1;//2;
 maximum_health = 2;
 
 walking = false;

@@ -23,6 +23,21 @@ if (is_undefined(map_value))
     
     // add the ds_list of object ids to the ds_map using the room's id as the key
     ds_map_add(MAP_ENEMIES_DESTROYED, room_id, object_list);
+    
+    /*
+    // add the room id to an array
+    if (is_array(ARRAY_ENEMIES_DESTROYED))
+    {
+        var position = array_length_1d(ARRAY_ENEMIES_DESTROYED);
+        ARRAY_ENEMIES_DESTROYED[position] = room_id;
+    }
+    else
+    {
+        ARRAY_ENEMIES_DESTROYED[0] = room_id;
+    }
+    */
+    
+    ds_list_add(LIST_ENEMIES_DESTROYED, room_id);
 }
 
 // else, the value does exist

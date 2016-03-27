@@ -35,9 +35,11 @@ GAME_HAS_FOCUS = false;
     MAP_ENEMIES_DESTROYED - a ds_map to track which enemies have been destroyed
 */
 
-globalvar MAP_ENEMIES_DESTROYED;
+globalvar ARRAY_ENEMIES_DESTROYED, MAP_ENEMIES_DESTROYED, LIST_ENEMIES_DESTROYED;
 
+ARRAY_ENEMIES_DESTROYED[0] = noone;
 MAP_ENEMIES_DESTROYED = ds_map_create();
+LIST_ENEMIES_DESTROYED = ds_list_create();
 
 
 /*
