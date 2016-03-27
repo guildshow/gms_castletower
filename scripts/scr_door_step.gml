@@ -19,17 +19,16 @@ if (can_use_door)
             io_clear();
             
             // check if the room exist
-            var room_id = asset_get_index(exit_room_name);
-            if (room_exists(room_id))
+            if (room_exists(exit_room_id))
             {
                 // update globals
                 PREVIOUS_DOOR_CODE = CURRENT_DOOR_CODE;
-                PREVIOUS_ROOM_NAME = CURRENT_ROOM_NAME;
+                PREVIOUS_ROOM_ID = CURRENT_ROOM_ID;
                 CURRENT_DOOR_CODE = exit_door_code;
-                CURRENT_ROOM_NAME = exit_room_name;
+                CURRENT_ROOM_ID = exit_room_id;
                 
                 // switch rooms
-                room_goto(room_id);
+                room_goto(exit_room_id);
             }
         }
     }

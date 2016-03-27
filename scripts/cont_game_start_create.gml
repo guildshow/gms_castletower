@@ -26,15 +26,16 @@ GAME_HAS_FOCUS = false;
 
 
 /*
-    MAP_ENEMIES_DESTROYED tracks which enemies in a room have been destroyed so that
-    when the room reloads the enemies can check whether their unique id exist in the map,
-    if so then they will destroy themselves when the room starts.
+    MAP_ENEMIES_DESTROYED
+     Tracks which enemies in a room have been destroyed so that when the room reloads 
+     the enemies can check whether their unique id exist in the map, if so then they 
+     will destroy themselves when the room starts.
     
-    LIST_ENEMIES_DESTROYED is used to check whether another room besides the current room
-    or the previous room has data in MAP_ENEMIES_DESTROYED. If so, that data is removed from
-    both the ds_map and the ds_list. This prevents enemies destroyed in the current room and
-    the previous room from respawning but allows them to respawn once the player has moved
-    several rooms away.
+    LIST_ENEMIES_DESTROYED
+     Used to check whether another room besides the current room or the previous room 
+     has data in MAP_ENEMIES_DESTROYED. If so, that data is removed from both the ds_map 
+     and the ds_list. This prevents enemies destroyed in the current room and the previous 
+     room from respawning but allows them to respawn once the player has moved several rooms away.
     
     MAP_ENEMIES_DESTROYED - a ds_map to track which enemies have been destroyed
     LIST_ENEMIES_DESTROYED - a ds_list of room ids being used as keys in MAP_ENEMIES_DESTROYED
@@ -47,18 +48,18 @@ LIST_ENEMIES_DESTROYED = ds_list_create();
 
 
 /*
-    CURRENT_DOOR_CODE
-    CURRENT_ROOM_NAME
-    PREVIOUS_DOOR_CODE
-    PREVIOUS_ROOM_NAME
+    CURRENT_DOOR_CODE - The code of the door being exited from. Used to place the player during their "Room Start" event.
+    CURRENT_ROOM_ID - The id of the room being exited into. *Not used at the moment since the built in "room" variable returns the current room's id.
+    PREVIOUS_DOOR_CODE - The previous door exited from. *Not used at the moment.
+    PREVIOUS_ROOM_ID - The id of the previous room. Used to determine which destroyed enemies in which rooms to allow a respawn.
 */
 
-globalvar CURRENT_DOOR_CODE, CURRENT_ROOM_NAME, PREVIOUS_DOOR_CODE, PREVIOUS_ROOM_NAME;
+globalvar CURRENT_DOOR_CODE, CURRENT_ROOM_ID, PREVIOUS_DOOR_CODE, PREVIOUS_ROOM_ID;
 
 CURRENT_DOOR_CODE = '';
-CURRENT_ROOM_NAME = '';
+CURRENT_ROOM_ID = noone;
 PREVIOUS_DOOR_CODE = '';
-PREVIOUS_ROOM_NAME = '';
+PREVIOUS_ROOM_ID = noone;
 
 
 /*
