@@ -24,8 +24,8 @@ jumpsmax = 2;
 
 can_attack = true;
 player_attack = noone;
-attack_time = 30; // 0.5 second
-attack_timer = 0;
+//attack_time = 30; // 0.5 second
+//attack_timer = 0;
 attack_cooldown_time = 60; // 1 second
 attack_cooldown_timer = 0;
 
@@ -41,7 +41,7 @@ key_jump_released = false;
 key_attack_pressed = false;
 
 // sprite animations
-/*
+/**/
 idle_speed = 0.025;
 idle_sprite = spr_player_idle;
 
@@ -51,14 +51,17 @@ jumping_sprite = spr_player_jumping;
 walking_speed = 0.1;
 walking_sprite = spr_player_walking;
 
+attacking_speed = 0.1;
+attacking_sprite = spr_player_attacking;
+
 hurting_speed = 0;
 hurting_sprite = spr_player_jumping;
-*/
-idle_speed = 0;
-idle_sprite = spr_player_box;
+/**/
+//idle_speed = 0;
+//idle_sprite = spr_player_box;
 
 sprite_index = idle_sprite;
 image_index = 0;
 image_speed = idle_speed;
-//mask_index = spr_player_standing_mask;
+mask_index = spr_player_standing_mask;
 

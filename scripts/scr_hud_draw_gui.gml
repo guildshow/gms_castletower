@@ -40,5 +40,5 @@ draw_set_color(c_white);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_font(fnt_pixel7_game);
-draw_text(4, 20, txt);
+draw_text(4, -20, txt);
 

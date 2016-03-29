@@ -3,14 +3,14 @@
   <type>0</type>
   <xorig>25</xorig>
   <yorigin>16</yorigin>
-  <colkind>0</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
-  <sepmasks>-1</sepmasks>
+  <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>33</bbox_left>
-  <bbox_right>49</bbox_right>
-  <bbox_top>6</bbox_top>
-  <bbox_bottom>25</bbox_bottom>
+  <bbox_left>1</bbox_left>
+  <bbox_right>47</bbox_right>
+  <bbox_top>2</bbox_top>
+  <bbox_bottom>31</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -20,8 +20,8 @@
   <width>50</width>
   <height>32</height>
   <frames>
-    <frame index="0">images\spr_player_attack_box_0.png</frame>
-    <frame index="1">images\spr_player_attack_box_1.png</frame>
-    <frame index="2">images\spr_player_attack_box_2.png</frame>
+    <frame index="0">images\spr_player_attacking_0.png</frame>
+    <frame index="1">images\spr_player_attacking_1.png</frame>
+    <frame index="2">images\spr_player_attacking_2.png</frame>
   </frames>
 </sprite>

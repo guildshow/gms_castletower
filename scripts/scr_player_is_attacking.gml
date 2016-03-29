@@ -1,50 +1,39 @@
 /**
  * Player: Is Attacking
  *
+ * Player will stop attacking when the attack animation ends or is hurt during
+ * the attack animation.
  */
 
 if ( ! dying && ! hurting && ! attacking)
 {
     // if the attack key was pressed
-    //if (can_attack && key_attack_pressed)
-    if (key_attack_pressed)
+    if (key_attack_pressed && player_attack == noone)
     {
-        //can_attack = false;
         attacking = true;
+        
+        // create the player attack instance
         player_attack = instance_create(0, 0, obj_player_attack);
         player_attack.belongs_to = object_index;
+        player_attack.image_index = 0;
+        player_attack.image_speed = attacking_speed;
     }
 }
 
-// if attack cooldown is active
-/*if ( ! can_attack)
+// if hurt while attacking
+if (attacking && hurting)
 {
-    attack_cooldown_timer += TICK;
-    
-    // if the timer has ended
-    if (attack_cooldown_timer >= attack_cooldown_time)
-    {
-        can_attack = true;
-        attack_cooldown_timer = 0;
-    }
-}*/
+    attacking = false;
+}
 
-if (attacking)
+// if no longer attacking but the player attack object still exist
+if ( ! attacking)
 {
-    attack_timer += TICK;
-    
-    // if the timer has ended
-    if (attack_timer >= attack_time)
+    if (player_attack)
     {
-        attacking = false;
-        attack_timer = 0;
-        
-        if (player_attack)
+        with (player_attack)
         {
-            with (player_attack)
-            {
-                instance_destroy();
-            }
+            instance_destroy();
         }
         player_attack = noone;
     }
